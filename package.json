@@ -51,7 +51,7 @@
     "@types/web": "^0.0.239",
     "chai": "^4.5.0",
     "chai-as-promised": "^7.1.2",
-    "eslint": "^8.57.1",
+    "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "lit": "^3.3.0",
