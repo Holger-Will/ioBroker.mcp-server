@@ -20,7 +20,7 @@
     "url": "git@github.com:Holger-Will/ioBroker.mcp-server.git"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 22"
   },
   "dependencies": {
     "@google/genai": "^1.4.0",
