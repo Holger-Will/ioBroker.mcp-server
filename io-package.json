@@ -1,121 +1,127 @@
 {
-	"common": {
-		"messagebox": true,
-		"name": "mcp-server",
-		"version": "0.0.1",
-		"news": {
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"uk": "Початкова версія",
-				"zh-cn": "首次出版"
-			}
-		},
-		"titleLang": {
-			"en": "MCP-Server",
-			"de": "MCP-Server",
-			"ru": "MCP-сервер",
-			"pt": "MCP-Server",
-			"nl": "MCP-server",
-			"fr": "MCP-Server",
-			"it": "MCP-Server",
-			"es": "Servidor MCP",
-			"pl": "MCP-serwer",
-			"uk": "MCP-сервер",
-			"zh-cn": "MCP服务器"
-		},
-		"desc": {
-			"en": "an MCP Server that controlls io-broker with AI from any MCP Client",
-			"de": "Ein MCP-Server, der IO-Broker mit KI von jedem MCP-Client steuert",
-			"ru": "MCP-сервер, который управляет IO-брокером с ИИ от любого клиента MCP",
-			"pt": "Um servidor MCP que controla o IO Broker com IA de qualquer cliente MCP",
-			"nl": "Een MCP-server die IO-makelaar met AI van elke MCP-client beheert",
-			"fr": "Un serveur MCP qui contrôle le courtier Io-Broker avec n'importe quel client MCP",
-			"it": "Un server MCP che controlla Io-broker con AI da qualsiasi client MCP",
-			"es": "Un servidor MCP que controla IO-Broker con AI desde cualquier cliente de MCP",
-			"pl": "serwer MCP, który kontroluje broker IO z AI od dowolnego klienta MCP",
-			"uk": "Сервер MCP, який контролює IO-брокер з AI від будь-якого клієнта MCP",
-			"zh-cn": "来自任何MCP客户端的AI控制IO-broker的MCP服务器"
-		},
-		"authors": ["Holger Will <h.will@klimapartner.de>"],
-		"keywords": ["LLM", "MCP", "AI", "ChatGPT", "Gemini"],
-		"licenseInformation": {
-			"type": "free",
-			"license": "MIT"
-		},
-		"platform": "Javascript/Node.js",
-		"icon": "mcp-server.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/Holger-Will/ioBroker.mcp-server/main/admin/mcp-server.png",
-		"readme": "https://github.com/Holger-Will/ioBroker.mcp-server/blob/main/README.md",
-		"loglevel": "info",
-		"tier": 3,
-		"mode": "daemon",
-		"type": "protocols",
-		"compact": true,
-		"connectionType": "local",
-		"dataSource": "push",
-		"adminUI": {
-			"config": "json",
-			"custom": "json"
-		},
-		"localLinks": {
-			"_default": "http://%host%:%port%/"
-		},
-		"webExtension": "lib/web.js",
-
-		"supportCustoms": true,
-		"dependencies": [
-			{
-				"js-controller": ">=6.0.11"
-			}
-		],
-		"globalDependencies": [
-			{
-				"admin": ">=7.0.23"
-			}
-		]
-	},
-	"native": {
-		"webInstance": "*",
-		"port": 4142,
-		"mcpPort": 4141,
-		"bind": "0.0.0.0",
-		"models": "gemini-2.5-flash-preview-05-20",
-		"embeddingModel": "gemini-embedding-exp-03-07",
-		"apiKey": "",
-		"systemPrompt": "You are an MCP Server that controls io-broker with AI from any MCP Client."
-	},
-
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"role": "indicator.connected",
-				"name": "Device or service connected",
-				"type": "boolean",
-				"read": true,
-				"write": false,
-				"def": false
-			},
-			"native": {}
-		}
-	]
+  "common": {
+    "messagebox": true,
+    "name": "mcp-server",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
+    },
+    "titleLang": {
+      "en": "MCP-Server",
+      "de": "MCP-Server",
+      "ru": "MCP-сервер",
+      "pt": "MCP-Server",
+      "nl": "MCP-server",
+      "fr": "MCP-Server",
+      "it": "MCP-Server",
+      "es": "Servidor MCP",
+      "pl": "MCP-serwer",
+      "uk": "MCP-сервер",
+      "zh-cn": "MCP服务器"
+    },
+    "desc": {
+      "en": "an MCP Server that controlls io-broker with AI from any MCP Client",
+      "de": "Ein MCP-Server, der IO-Broker mit KI von jedem MCP-Client steuert",
+      "ru": "MCP-сервер, который управляет IO-брокером с ИИ от любого клиента MCP",
+      "pt": "Um servidor MCP que controla o IO Broker com IA de qualquer cliente MCP",
+      "nl": "Een MCP-server die IO-makelaar met AI van elke MCP-client beheert",
+      "fr": "Un serveur MCP qui contrôle le courtier Io-Broker avec n'importe quel client MCP",
+      "it": "Un server MCP che controlla Io-broker con AI da qualsiasi client MCP",
+      "es": "Un servidor MCP que controla IO-Broker con AI desde cualquier cliente de MCP",
+      "pl": "serwer MCP, który kontroluje broker IO z AI od dowolnego klienta MCP",
+      "uk": "Сервер MCP, який контролює IO-брокер з AI від будь-якого клієнта MCP",
+      "zh-cn": "来自任何MCP客户端的AI控制IO-broker的MCP服务器"
+    },
+    "authors": [
+      "Holger Will <h.will@klimapartner.de>"
+    ],
+    "keywords": [
+      "LLM",
+      "MCP",
+      "AI",
+      "ChatGPT",
+      "Gemini"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "mcp-server.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Holger-Will/ioBroker.mcp-server/main/admin/mcp-server.png",
+    "readme": "https://github.com/Holger-Will/ioBroker.mcp-server/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "daemon",
+    "type": "protocols",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json",
+      "custom": "json"
+    },
+    "localLinks": {
+      "_default": "http://%host%:%port%/"
+    },
+    "webExtension": "lib/web.js",
+    "supportCustoms": true,
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.8.23"
+      }
+    ]
+  },
+  "native": {
+    "webInstance": "*",
+    "port": 4142,
+    "mcpPort": 4141,
+    "bind": "0.0.0.0",
+    "models": "gemini-2.5-flash-preview-05-20",
+    "embeddingModel": "gemini-embedding-exp-03-07",
+    "apiKey": "",
+    "systemPrompt": "You are an MCP Server that controls io-broker with AI from any MCP Client."
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
